@@ -25,7 +25,7 @@ author:
   avatar           : "Ph.D.Pepe.png"
   name             : "Seungjun Jung"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "AI Researcher"
   location         : "Republic of Korea"
   employer         : "Chung-Ang University"
   uri              : # URL
@@ -78,9 +78,9 @@ author:
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
-publication_category:
+publication_category:    
   conferences:
-    title: 'International Conference Papers'
+    title: 'Conference Papers'
   journals:
     title: 'International Journal Articles' 
   domestic:
