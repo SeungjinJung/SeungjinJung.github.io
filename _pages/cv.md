@@ -11,35 +11,21 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **Chung-Ang University**, Seoul, Korea
+  **Ph.D.** in Department of Artificial Intelligence, Sep. 2022 - Now
+  Adviser : Prof. Jongwon Choi 
+* **Graduate School of Advanced Imaging Science, Multimedia & Film, Chung-Ang University**, Seoul, Korea
+  **M.E.**, Department of Image Science and Arts, Sep. 2020 - Aug. 2022
+  Adviser : Prof. Jongwon Choi 
+* **Hoseo University**, Asan, Korea
+	**B.E.**, Department of Information and Communication Engineering, Mar. 2013 - Feb. 2020 with *Summa Cum Laude*
 
-Work experience
+Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **Naver CLOVA**, Seongnam, Korea
+  Internship, Naver Clova Image Vision team., Sep.2022 - Mar. 2023.
+* **Graduate School of Advanced Imaging Science, Multimedia & Film, Chung-Ang University**, Seoul, Korea
+  Research Assistant, Visual Intelligence Lab., Sep. 2020 - Aug. 2022.
 
 Publications
 ======
@@ -47,12 +33,31 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Invited Talk
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
-  
+
+
+Patent
+======
+Registration
+  * [[KR1](https://patents.google.com/patent/KR102650992B1/en?oq=kr+10-2650992)] 10-2650992. Apparatus and Method for Neural Network Compression using Block Transform (Jun. 2024)
+  * [[KR2](https://patents.google.com/patent/KR102695536B1/en?oq=kr+10-2695536https://patents.google.com/patent/KR102695536B1/en?oq=kr+10-2695536)] 10-2695536. Irregular/Bad Food Monitoring Device and Method (Aug. 2024)
+  * [[KR3](https://patents.google.com/patent/KR102695889B1/en?oq=kr+10-2695889)] 10-2695889. Method and apparatus for controlling loss scale by class for post-correction, and computer program (Aug. 2024)
+  * [[KR4](https://patents.google.com/patent/KR102724394B1/en?oq=kr+10-2724394)] 10-2724394. Method and apparatus for analyzing articles through keyword extraction, and computer programs (Oct. 2024)
+
+Application
+  * [US1] 18/396,927. Method and apparatus for controlling loss scale by class for post-correction, and computer program (Dec. 2023)
+
+Peer Review Activity
+======
+  * IEEE Winter Conference on Applications of Computer Vision (WACV): 2025
+  * IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR): 2025
+
+
+  <!-- 
 Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
@@ -61,4 +66,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
