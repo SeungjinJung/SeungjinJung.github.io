@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
+<p align="right"><img src='/images/author/profile' width='80%' height='80%'></p>
 
 Education
 ======
@@ -55,15 +56,3 @@ Peer Review Activity
 ======
   * IEEE Winter Conference on Applications of Computer Vision (WACV): 2025
   * IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR): 2025
-
-
-  <!-- 
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams -->
