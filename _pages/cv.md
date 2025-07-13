@@ -23,23 +23,10 @@ Experience
 
 Publications
 ======
-International Conference
-  <ul>{% for post in site.publications reversed %}
-    {% if post.category == conferences %}
-      {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
-International Journal
-  <ul>{% for post in site.publications reversed %}
-    {% if post.category == journals %}
-      {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
-Domestic Papers
-  <ul>{% for post in site.publications reversed %}
-    {% if post.category == domestic %}
-      {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+<ul>{% for post in site.publications reversed %}
+  {% if post.category == conferences %}
+    {% include archive-single-cv.html %}
+{% endfor %}</ul>
 
   
 Invited Talk
