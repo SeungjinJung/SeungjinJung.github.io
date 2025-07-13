@@ -23,8 +23,22 @@ Experience
 
 Publications
 ======
+International Conference
   <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
+    {% if post.category == conferences %}
+      {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+International Journal
+  <ul>{% for post in site.publications reversed %}
+    {% if post.category == journals %}
+      {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+Domestic Papers
+  <ul>{% for post in site.publications reversed %}
+    {% if post.category == domestic %}
+      {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
   
