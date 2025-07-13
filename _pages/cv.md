@@ -24,8 +24,7 @@ Experience
 Publications
 ======
 <ul>{% for post in site.publications reversed %}
-  {% if post.category == conferences %}
-    {% include archive-single-cv.html %}
+  {% include archive-single-cv.html %}
 {% endfor %}</ul>
 
   
