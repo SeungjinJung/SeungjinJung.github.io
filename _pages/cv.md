@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-<p align="right"><img src='/images/author/profile.pdf' width='30%' height='30%'></p>
+<p align="right"><img src='/images/author/profile.png' width='30%' height='30%'></p>
 
 Education
 ======
@@ -26,27 +26,6 @@ Publications
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-
-  {% if site.publication_category %}
-    {% for category in site.publication_category  %}
-      {% assign title_shown = false %}
-      {% for post in site.publications reversed %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
-        {% unless title_shown %}
-          <h2>{{ category[1].title }}</h2><hr />
-          {% assign title_shown = true %}
-        {% endunless %}
-        {% include archive-single.html %}
-      {% endfor %}
-    {% endfor %}
-  {% else %}
-    {% for post in site.publications reversed %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endif %}
-
 
   
 Invited Talk
