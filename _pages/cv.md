@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-<p align="right"><img src='/images/author/profile.pdf' width='80%' height='80%'></p>
+<p align="right"><img src='/images/author/profile.pdf' width='30%' height='30%'></p>
 
 Education
 ======

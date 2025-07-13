@@ -28,8 +28,9 @@ author:
   bio              : "AI Researcher"
   location         : "Republic of Korea"
   employer         : "Chung-Ang University"
-  uri              : # URL
+  uri              : #
   email            : "sjjung@vilab.cau.ac.kr" 
+  lab              : "![VILab](https://www.vilab.cau.ac.kr)"
 
   # Academic websites
   academia         : # URL

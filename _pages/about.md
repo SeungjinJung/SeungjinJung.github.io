@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am currently pursuing a Ph.D. degree in Aartificial Iintelligence from Chung-Ang University, South Korea.
-My interesting research is _Uncertainty Calibration, Domain Generalization, Representation Learning_.
+I am currently a Ph.D. student in Artificial Intelligence at Chung-Ang University, Republic of Korea, affiliated with the [VILab@CAU.](https://www.vilab.cau.ac.kr)
+My research interests include _Uncertainty Calibration, Domain Generalization, and Representation Learning_.
 
-I recieved the B.E. degree in information and communication engineering from Hoseo University, South Korea (2013-2020) with _Summa Cum Laude_ and the M.E. degree in digital imaging from Chung-Ang University, South Korea.
+I received my B.E. degree in Information and Communication Engineering from Hoseo University, Republic of Korea (2013–2020), graduating Summa Cum Laude, and my M.E. degree in Digital Imaging from Chung-Ang University.
