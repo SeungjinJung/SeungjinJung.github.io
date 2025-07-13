@@ -25,12 +25,11 @@ author:
   avatar           : "author/Ph.D.Pepe.png"
   name             : "Seungjun Jung"
   pronouns         : # example: "she/her"  
-  bio              : "AI Researcher"
+  bio              : "AI Researcher<br/>Ph.D. Candidate<br/><link rel='Affilated with Visual Intelligence Lab' href='https://vilab.cau.ac.kr'>"
   location         : "Republic of Korea"
   employer         : "Chung-Ang University"
   uri              : #
-  email            : "sjjung@vilab.cau.ac.kr" 
-  lab              : "![VILab](https://www.vilab.cau.ac.kr)"
+  email            : "sjjung@vilab.cau.ac.kr"
 
   # Academic websites
   academia         : # URL
