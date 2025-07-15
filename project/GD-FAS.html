@@ -25,7 +25,7 @@
 
 
   <title>Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/images/author/academic.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -106,20 +106,17 @@
               </span>
               <span>arXiv</span>
 
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+              <a href="https://arxiv.org/abs/2507.04006" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+
                 <div class="column has-text-centered">
                   <div class="publication-links">
-                  <!-- Arxiv PDF link -->
-                  <span class="link-block">
-                    <a href="https://arxiv.org/abs/2507.04006" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                </span>
-                <span>Paper</span>
-              </a>
-              </span>
-                </a>
-              </span>
             </div>
           </div>
         </div>
@@ -150,7 +147,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework that jointly aligns weights and biases through Feature Orthogonal Decomposition (FOD) and Group-wise Scaling Risk Minimization (GS-RM). Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
           </p>
         </div>
       </div>
