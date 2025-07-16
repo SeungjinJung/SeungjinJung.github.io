@@ -25,9 +25,20 @@
       border-radius: 0 0 32px 32px;
       box-shadow: 0 4px 24px rgba(60,60,100,0.10);
       border-bottom: 2px solid #e5e7eb;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: url('/images/publication/2025-10-21-paper/ICCV2025.png');
       background-size: cover;
-      opacity: 0.2
+      opacity: 0.2;
+      z-index: 0;
+    }
+    header * {
+      position: relative;
+      z-index: 1;
     }
     .iccv-badge {
       position: absolute;
