@@ -287,18 +287,19 @@
 
   <section class="section" id="method">
     <h2>Method & Architecture</h2>
-    <div class="fig-row">
+    <!-- <div class="fig-row">
       <div class="fig-card">
         <div class="fig-title">Frequency Extraction</div>
         <img src="figures/figure2.png" alt="Temporal artifacts and frequency extraction method">
         <div class="fig-desc">Our method captures subtle temporal artifacts in deepfake videos by applying a 1D Fourier transform to each pixel over time, unlike previous methods that rely on spatial frequency stacking.</div>
       </div>
+
       <div class="fig-card wide">
         <div class="fig-title">Proposed Architecture</div>
         <img src="figures/figure3.png" alt="Frequency Feature Extractor and Joint Transformer Module">
         <div class="fig-desc">The pipeline consists of a Frequency Feature Extractor (with pixel-wise temporal Fourier transform and Attention Proposal Module) and a Joint Transformer Module for robust deepfake detection.</div>
       </div>
-    </div>
+    </div> -->
     <!-- <div style="background:#e0e7ff; border-left:4px solid #2563eb; border-radius:10px; margin:18px 0 24px 0; padding:18px 18px 12px 18px; font-size:1.05em; color:#222;">
       <b>Proposed Architecture (Mathematical Description):</b><br>
       <span style="font-size:0.98em; color:#334155;">
@@ -403,15 +404,16 @@
         <div style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></div>
       </div>
       <div style="margin-top: 8px;">
-@misc{kim2025spatialfrequencypixelwisetemporal,
-      title={Beyond Spatial Frequency: Pixel-wise Temporal Frequency-based Deepfake Video Detection}, 
-      author={Taehoon Kim and Jongwook Choi and Yonghyun Jeong and Haeun Noh and Jaejun Yoo and Seungryul Baek and Jongwon Choi},
-      year={2025},
-      eprint={2507.02398},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.02398}, 
-}</div>
+        @misc{jung2025groupwisescalingorthogonaldecomposition,
+          title={Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing}, 
+          author={Seungjin Jung and Kanghee Lee and Yonghyun Jeong and Haeun Noh and Jungmin Lee and Jongwon Choi},
+          year={2025},
+          eprint={2507.04006},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV},
+          url={https://arxiv.org/abs/2507.04006}, 
+          }
+</div>
     </div>
     <div style="text-align: center; margin-top: 20px;">
       <button onclick="copyBibTeX()" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 0.9em; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(59,130,246,0.3);" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(59,130,246,0.3)'">
