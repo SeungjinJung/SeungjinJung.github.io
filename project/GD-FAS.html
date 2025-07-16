@@ -75,13 +75,13 @@
       stroke: #fde68a;
     }
     .authors {
-      color: #334155;
+      color: #006CC9;
       font-size: 1.13rem;
       margin-bottom: 2px;
       text-align: center;
     }
     .affiliations {
-      color: #64748b;
+      color: #006CC9;
       font-size: 1.01rem;
       margin-bottom: 0;
       text-align: center;
@@ -103,6 +103,11 @@
       text-shadow: none;
       text-align: center;
     }
+    p {
+      font-size: 1.00rem;
+      text-align: justify;
+    }
+
     ul, ol {
       margin: 0 0 0 18px;
     }
@@ -230,7 +235,9 @@
       body { padding: 0 2vw; }
       .section { padding: 16px 4vw 10px 4vw; }
       header { padding: 24px 0 10px 0; }
-      h1 { font-size: 1.3rem; }
+      h1 { 
+        color: #006CC9; 
+        font-size: 1.3rem; }
     }
   </style>
 </head>
@@ -273,7 +280,7 @@
 
   <section class="section" id="abstract">
     <h2>Abstract</h2>
-    <p align:justify> 
+    <p> 
       Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework that jointly aligns weights and biases through Feature Orthogonal Decomposition (FOD) and Group-wise Scaling Risk Minimization (GS-RM). Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
     </p>
   </section>
