@@ -252,11 +252,14 @@
     <div class="authors">
       
       <a href="https://seungjinjung.github.io"><b>Seungjin Jung</b><sup>1</sup></a>,
-      <a href="https://tommylee8939.github.io/about/"><b>Kanghee Lee</b><sup>1</sup></a>,  
+      <!-- <a href="https://tommylee8939.github.io/about/"> -->
+      <a><b>Kanghee Lee</b><sup>1</sup></a>,  
       <a><b>Yonghyun Jeong</b><sup>2</sup></a>,  
-      <a href="https://sites.google.com/view/haeunnoh"><b>Haeun Noh</b><sup>1</sup></a>,  
-      <a href="https://sites.google.com/vilab.cau.ac.kr/jungminleeshomepage/home?authuser=0"><b>Jungmin Lee</b><sup>1</sup></a>, 
-      <a href="https://www.vilab.cau.ac.kr/home"><b>Jongwon Choi</b><sup>1</sup></a></div>
+      <!-- <a href="https://sites.google.com/view/haeunnoh"> -->
+      <a><b>Haeun Noh</b><sup>1</sup></a>,  
+      <!-- <a href="https://sites.google.com/vilab.cau.ac.kr/jungminleeshomepage/home?authuser=0"> -->
+      <a><b>Jungmin Lee</b><sup>1</sup></a>, 
+      <a href="https://www.vilab.cau.ac.kr/about-lab"><b>Jongwon Choi</b><sup>1</sup></a></div>
       
     <div class="affiliations"><b><sup>1</sup>Chung-Ang Univ, <sup>2</sup>NAVER Cloud</b></div>
   </header>
@@ -279,20 +282,20 @@
   <section class="section" id="abstract">
     <h2>Abstract</h2>
     <p> 
-      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework that jointly aligns weights and biases through Feature Orthogonal Decomposition (FOD) and Group-wise Scaling Risk Minimization (GS-RM). Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
+      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b>GD-FAS</b>, comprising <b>G</b>roup-wise Scaling Risk Minimization (GS-RM) and Feature Orthogonal <b>D</b>ecomposition (FOD) by jointly aligning weights and biases. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
     </p>
   </section>
 
   <section class="section" id="method">
     <h2>Method & Architecture</h2>
-    <!-- <div class="fig-row">
+    <div class="fig-row">
       <div class="fig-card">
         <div class="fig-title">Frequency Extraction</div>
         <img src="figures/figure2.png" alt="Temporal artifacts and frequency extraction method">
         <div class="fig-desc">Our method captures subtle temporal artifacts in deepfake videos by applying a 1D Fourier transform to each pixel over time, unlike previous methods that rely on spatial frequency stacking.</div>
       </div>
 
-      <div class="fig-card wide">
+      <!-- <div class="fig-card wide">
         <div class="fig-title">Proposed Architecture</div>
         <img src="figures/figure3.png" alt="Frequency Feature Extractor and Joint Transformer Module">
         <div class="fig-desc">The pipeline consists of a Frequency Feature Extractor (with pixel-wise temporal Fourier transform and Attention Proposal Module) and a Joint Transformer Module for robust deepfake detection.</div>
@@ -349,7 +352,7 @@
       We present a novel forgery detection approach based on pixel-wise temporal frequency. We first demonstrate that temporal frequency can be used to detect forgery and then use experiments to show how it can help where other methods fail. Contrary to spatial frequency, pixel-wise temporal frequency can detect local temporal inconsistency, which makes generalized deepfake video detection possible. We also propose a framework to fuse temporal frequency information with RGB video information. Finally, we perform forgery detection through the automatic mechanism of extracting the region of interest and our solution is more robust and generalized than previous methods.
     </p>
   </section> -->
-  <section id="limitations-future-work" class="section">
+  <!-- <section id="limitations-future-work" class="section">
     <h2>Limitations & Future Work</h2>
     <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px;">
       <div style="flex: 2 1 340px; min-width: 260px;">
@@ -384,7 +387,7 @@
         mitigate performance degradation.
       </p>
     </div>
-  </section>
+  </section> -->
   
   
 
@@ -410,27 +413,27 @@
           archivePrefix={arXiv},
           primaryClass={cs.CV},
           url={https://arxiv.org/abs/2507.04006}, 
-          }
+        }
 </div>
     </div>
     <div style="text-align: center; margin-top: 20px;">
       <button onclick="copyBibTeX()" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 0.9em; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(59,130,246,0.3);" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(59,130,246,0.3)'">
-        📋 Copy BibTeX
+        📋 Copy BibTeXㄴ
       </button>
     </div>
   </section>
 
   <script>
     function copyBibTeX() {
-      const bibtex = `@misc{kim2025spatialfrequencypixelwisetemporal,
-      title={Beyond Spatial Frequency: Pixel-wise Temporal Frequency-based Deepfake Video Detection}, 
-      author={Taehoon Kim and Jongwook Choi and Yonghyun Jeong and Haeun Noh and Jaejun Yoo and Seungryul Baek and Jongwon Choi},
-      year={2025},
-      eprint={2507.02398},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.02398}, 
-}`;
+      const bibtex = `@misc{jung2025groupwisescalingorthogonaldecomposition,
+          title={Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing}, 
+          author={Seungjin Jung and Kanghee Lee and Yonghyun Jeong and Haeun Noh and Jungmin Lee and Jongwon Choi},
+          year={2025},
+          eprint={2507.04006},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV},
+          url={https://arxiv.org/abs/2507.04006}
+          }`;
       navigator.clipboard.writeText(bibtex).then(function() {
         const button = document.querySelector('button');
         const originalText = button.innerHTML;
@@ -443,25 +446,5 @@
       });
     }
   </script>
-
-  <section id="acknowledgement" class="section" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; max-width: 700px; margin: 40px auto 0 auto; padding: 28px 0 20px 0; border-radius: 20px; box-shadow: 0 4px 20px rgba(245,158,11,0.15);">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <h3 style="color: #92400e; font-size: 1.3em; margin-bottom: 8px; letter-spacing: 0.5px; font-weight: 700;">🙏 Acknowledgement</h3>
-      <div style="width: 60px; height: 3px; background: linear-gradient(90deg, #f59e0b, #d97706); margin: 0 auto; border-radius: 2px;"></div>
-    </div>
-    <div style="background: rgba(255,255,255,0.8); border: 1px solid #fbbf24; border-radius: 12px; padding: 20px; margin: 0 24px; backdrop-filter: blur(10px);">
-      <div style="color: #78350f; font-size: 0.95em; line-height: 1.6; text-align: center;">
-        This work was partly supported by <strong>Institute of Information & Communication Technology Planning & Evaluation (IITP)</strong> grant funded by the Korea government (MSIT):
-      </div>
-      <div style="margin-top: 16px; padding: 16px; background: linear-gradient(135deg, #fef7ed 0%, #ffedd5 100%); border-radius: 8px; border-left: 4px solid #f59e0b;">
-        <ul style="color: #92400e; font-size: 0.9em; line-height: 1.5; margin: 0; padding-left: 20px; text-align: left;">
-          <li style="margin-bottom: 8px;"><strong>No. RS-2025-02263841:</strong> Development of a Real-time Multimodal Framework for Comprehensive Deepfake Detection Incorporating Common Sense Error Analysis</li>
-          <li style="margin-bottom: 8px;"><strong>RS-2021-II211341:</strong> Artificial Intelligence Graduate School Program (Chung-Ang University)</li>
-          <li><strong>No. RS-2020-II201336:</strong> AIGS program (UNIST)</li>
-        </ul>
-      </div>
-    </div>
-    </div>
-  </section>
 </body>
 </html>
