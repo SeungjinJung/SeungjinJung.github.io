@@ -123,7 +123,7 @@
     }
     .fig-card {
       flex: 1 1 0;
-      max-width: 380px;
+      max-width: 100%;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -320,10 +320,14 @@
   <section class="section" id="experiments">
     <h2>Experiments & Results</h2>
       <div class="fig-card">
-        <div class="fig-title">Attention Proposal Module (APM) Visualization</div>
+        <div class="fig-title">
+          Attention Proposal Module (APM) Visualization
+        </div>
         <img src="figures/figure5.png" alt="Visualization of APM proposed regions over time">
-        <div class="fig-desc">The APM automatically focuses on regions (e.g., eyes, mouth) where temporal incoherence is most likely, enabling more precise detection of deepfake artifacts.</div>
-    </div>
+        <div class="fig-desc">
+          The APM automatically focuses on regions (e.g., eyes, mouth) where temporal incoherence is most likely, enabling more precise detection of deepfake artifacts.
+        </div>
+      </div>
     <ul>
       <li>Achieves <b>state-of-the-art</b> performance on multiple datasets (FF++, CDF, DFDC, KoDF, etc.).</li>
       <li>Demonstrates strong <b>generalization</b> in cross-deepfakes and cross-synthesis experiments.</li>
