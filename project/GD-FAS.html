@@ -123,7 +123,7 @@
     }
     .fig-card {
       flex: 1 1 0;
-      max-width: 100%;
+      max-width: auto;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -279,53 +279,44 @@
     </span>
   </div>
 
+<!-- Abstract -->
   <section class="section" id="abstract">
+    <img src="/images/publication/2025-10-21-paper/GD-FAS-teaser.png">
     <h2>Abstract</h2>
     <p> 
-      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b>GD-FAS</b>, comprising <b>G</b>roup-wise Scaling Risk Minimization (GS-RM) and Feature Orthogonal <b>D</b>ecomposition (FOD) by jointly aligning weights and biases. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
+      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b>GD-FAS</b>, comprising Group-wise Scaling Risk Minimization (<b>G</b>S-RM) and Feature Orthogonal Decomposition (FO<b>D</b>) by aligning weights and biases for each domain. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
     </p>
   </section>
 
+<!-- Method -->
   <section class="section" id="method">
     <h2>Method & Architecture</h2>
     <div class="fig-row">
       <div class="fig-card">
-        <div class="fig-title">Frequency Extraction</div>
-        <img src="figures/figure2.png" alt="Temporal artifacts and frequency extraction method">
-    <div class="fig-desc">Our method captures subtle temporal artifacts in deepfake videos by applying a 1D Fourier transform to each pixel over time, unlike previous methods that rely on spatial frequency stacking.</div>
-    </div>
-
-      <!-- <div class="fig-card wide">
-        <div class="fig-title">Proposed Architecture</div>
-        <img src="figures/figure3.png" alt="Frequency Feature Extractor and Joint Transformer Module">
-        <div class="fig-desc">The pipeline consists of a Frequency Feature Extractor (with pixel-wise temporal Fourier transform and Attention Proposal Module) and a Joint Transformer Module for robust deepfake detection.</div>
+        <div class="fig-title">Frameworks</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-architecture.png">
+        <div class="fig-desc">architecture</div>
       </div>
-    </div> -->
-    <!-- <div style="background:#e0e7ff; border-left:4px solid #2563eb; border-radius:10px; margin:18px 0 24px 0; padding:18px 18px 12px 18px; font-size:1.05em; color:#222;">
-      <b>Proposed Architecture (Mathematical Description):</b><br>
-      <span style="font-size:0.98em; color:#334155;">
-        For extracting temporal frequency <span style="font-family:serif;">F<sup>0</sup></span>, the video clip <span style="font-family:serif;">V</span> is decomposed into temporal frequency components using the Fourier Transform.<br>
-        The frequency feature extractor obtains a part-based frequency feature <span style="font-family:serif;">Z<sup>p</sup></span> and a global frequency feature <span style="font-family:serif;">Z<sup>0</sup></span> using 2D ResNet and an attention proposal module.<br>
-        The part-based and global frequency features enter the feature blender to get a blended feature <span style="font-family:serif;">Z<sup>+</sup></span>, and put the blended features, part-based frequency features, and global frequency features into a joint transformer module to classify real and fake.
-      </span>
-    </div> -->
+    </div>
     
-    <!-- <ul>
-      <li><b>Pixel-wise Temporal Frequency Extraction:</b> 1D Fourier transform along the time axis for each pixel, capturing subtle temporal artifacts.</li>
-      <li><b>Attention Proposal Module (APM):</b> Learns to focus on regions with temporal artifacts using weak supervision.</li>
-      <li><b>Joint Transformer Module:</b> Fuses global/part-based frequency features and spatio-temporal context for final classification.</li>
-    </ul> -->
+    <div class="fig-row">
+      <div class="fig-card">
+        <div class="fig-title">GS-RM and FOD</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-framework.png">
+        <div class="fig-desc">GD-fas</div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="experiments">
-    <h2>Experiments & Results</h2>
+    <h2>Experiments & Visualization</h2>
       <div class="fig-card">
         <div class="fig-title">
-          Attention Proposal Module (APM) Visualization
+          Experiments
         </div>
-        <img src="figures/figure5.png" alt="Visualization of APM proposed regions over time">
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-experiment.png">
         <div class="fig-desc">
-          The APM automatically focuses on regions (e.g., eyes, mouth) where temporal incoherence is most likely, enabling more precise detection of deepfake artifacts.
+           main experiments
         </div>
       </div>
     <ul>
@@ -333,6 +324,21 @@
       <li>Demonstrates strong <b>generalization</b> in cross-deepfakes and cross-synthesis experiments.</li>
       <li><b>APM</b> is effective in identifying regions of interest for deepfake detection.</li>
     </ul>
+
+    <div class="fig-card">
+      <div class="fig-title">
+        Visualization
+      </div>
+      <img src="/images/publication/2025-10-21-paper/GD-FAS-visualization.png">
+      <div class="fig-desc">
+         Visualization
+      </div>
+    </div>
+  <ul>
+    <li>Achieves <b>state-of-the-art</b> performance on multiple datasets (FF++, CDF, DFDC, KoDF, etc.).</li>
+    <li>Demonstrates strong <b>generalization</b> in cross-deepfakes and cross-synthesis experiments.</li>
+    <li><b>APM</b> is effective in identifying regions of interest for deepfake detection.</li>
+  </ul>
   </section>
   <section class="section" id="contributions">
     <h2>Key Contributions</h2>
@@ -343,105 +349,20 @@
       <li>Achieves <b>state-of-the-art performance</b> and generalizability.</li>
     </ul>
   </section>
-  <!-- <section class="section" id="conclusion">
-    <h2>Conclusion</h2>
-    <p style="text-align: center;">
-      We present a novel forgery detection approach based on pixel-wise temporal frequency. We first demonstrate that temporal frequency can be used to detect forgery and then use experiments to show how it can help where other methods fail. Contrary to spatial frequency, pixel-wise temporal frequency can detect local temporal inconsistency, which makes generalized deepfake video detection possible. We also propose a framework to fuse temporal frequency information with RGB video information. Finally, we perform forgery detection through the automatic mechanism of extracting the region of interest and our solution is more robust and generalized than previous methods.
-    </p>
-  </section> -->
-  <!-- <section id="limitations-future-work" class="section">
-    <h2>Limitations & Future Work</h2>
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px;">
-      <div style="flex: 2 1 340px; min-width: 260px;">
-        <div style="background: linear-gradient(90deg, #f3f4f6 0%, #fff 100%); border-left: 5px solid #fbbf24; border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; font-size: 1.08em;">
-          <strong style="color:#b45309; font-weight:700;">Limitations:</strong>
-          <ul style="margin: 12px 0 0 20px; padding: 0; list-style-type: disc;">
-            <li>
-              <span style="color:#e11d48; font-weight:600;">Heavy compression</span> (H.264, JPEG, WebP)
-              merges neighboring pixels and diminishes pixel-level motion, inducing domain shifts in the temporal frequency.
-            </li>
-            <li>
-              Compressed videos align with the raw signal closely at
-          <span style="color:#7c3aed; font-weight:600;">low frequencies</span>,
-          but diverge significantly in the
-          <span style="color:#f43f5e; font-weight:600;">high-frequency</span> range.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div style="flex: 1 1 320px; min-width: 200px; display: flex; flex-direction: column; justify-content: center; align-items: stretch; margin-top: 0;">
-        <img src="figures/figureE.png" alt="Limitation Illustration" style="max-width: 320px; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; box-shadow: 0 2px 12px rgba(60,60,100,0.09); border: 1.2px solid #e5e7eb; background: #fff; margin-top: 0;" />
-        <div style="font-size: 0.98em; color: #64748b; margin-top: 8px;">
-          We measured the average pixel-wise temporal frequency under various compression schemes (H.264, JPEG, WebP).
-        </div>
-      </div>
-    </div>
-    <div style="background: linear-gradient(90deg, #f3f4f6 0%, #fff 100%); border-left: 5px solid #fbbf24; border-radius: 12px; padding: 20px 22px; margin-top: 18px; font-size: 1.08em;">
-      <strong style="color:#b45309; font-weight:700;">Future Work:</strong>
-      <p style="margin: 12px 0 0 0;">
-        This sensitivity to heavy compression remains a limitation. In future work,
-        we will investigate <span style="color:#e11d48; font-weight:600;">temporal-frequency regularization techniques</span> to
-        mitigate performance degradation.
-      </p>
-    </div>
-  </section> -->
-  
-  
 
-
-
-  <section id="citation" class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 2px solid #e2e8f0; max-width: 900px; margin: 40px auto 0 auto; padding: 32px 0 24px 0; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-    <div style="text-align: center; margin-bottom: 24px;">
-      <h3 style="color: #1e293b; font-size: 1.4em; margin-bottom: 8px; letter-spacing: 0.5px; font-weight: 700;">📚 Citation</h3>
-      <p style="color: #64748b; font-size: 1em; margin: 0;">Cite our paper using the following BibTeX entry</p>
-    </div>
-    <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border: 1px solid #475569; border-radius: 12px; padding: 20px; margin: 0 24px; font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; font-size: 0.92em; color: #e2e8f0; overflow-x: auto; white-space: pre-wrap; box-shadow: 0 8px 32px rgba(0,0,0,0.15); position: relative;">
-      <div style="position: absolute; top: 12px; right: 16px; display: flex; gap: 6px;">
-        <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
-        <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
-        <div style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></div>
-      </div>
-      <div style="margin-top: 8px;">
-        @misc{jung2025groupwisescalingorthogonaldecomposition,
-          title={Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing}, 
-          author={Seungjin Jung and Kanghee Lee and Yonghyun Jeong and Haeun Noh and Jungmin Lee and Jongwon Choi},
-          year={2025},
-          eprint={2507.04006},
-          archivePrefix={arXiv},
-          primaryClass={cs.CV},
-          url={https://arxiv.org/abs/2507.04006}, 
+  <section class="section" id="bibtex">
+    <h2>Citation</h2>
+    <div class="fig-row">
+      <div class="fig-card">
+        @article{jung2025group,
+          title={Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing},
+          author={Jung, Seungjin and Lee, Kanghee and Jeong, Yonghyun and Noh, Haeun and Lee, Jungmin and Choi, Jongwon},
+          journal={arXiv preprint arXiv:2507.04006},
+          year={2025}
         }
-</div>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <button onclick="copyBibTeX()" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 0.9em; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(59,130,246,0.3);" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(59,130,246,0.3)'">
-        📋 Copy BibTeXㄴ
-      </button>
+      </div>
     </div>
   </section>
 
-  <script>
-    function copyBibTeX() {
-      const bibtex = `@misc{jung2025groupwisescalingorthogonaldecomposition,
-          title={Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing}, 
-          author={Seungjin Jung and Kanghee Lee and Yonghyun Jeong and Haeun Noh and Jungmin Lee and Jongwon Choi},
-          year={2025},
-          eprint={2507.04006},
-          archivePrefix={arXiv},
-          primaryClass={cs.CV},
-          url={https://arxiv.org/abs/2507.04006}
-          }`;
-      navigator.clipboard.writeText(bibtex).then(function() {
-        const button = document.querySelector('button');
-        const originalText = button.innerHTML;
-        button.innerHTML = '✅ Copied!';
-        button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        setTimeout(function() {
-          button.innerHTML = originalText;
-          button.style.background = 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)';
-        }, 2000);
-      });
-    }
-  </script>
 </body>
 </html>
