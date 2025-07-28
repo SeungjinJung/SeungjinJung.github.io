@@ -292,8 +292,8 @@
       <div class="fig-card">
         <div class="fig-title">Frequency Extraction</div>
         <img src="figures/figure2.png" alt="Temporal artifacts and frequency extraction method">
-        <div class="fig-desc">Our method captures subtle temporal artifacts in deepfake videos by applying a 1D Fourier transform to each pixel over time, unlike previous methods that rely on spatial frequency stacking.</div>
-      </div>
+    <div class="fig-desc">Our method captures subtle temporal artifacts in deepfake videos by applying a 1D Fourier transform to each pixel over time, unlike previous methods that rely on spatial frequency stacking.</div>
+    </div>
 
       <!-- <div class="fig-card wide">
         <div class="fig-title">Proposed Architecture</div>
@@ -310,26 +310,19 @@
       </span>
     </div> -->
     
-    <ul>
+    <!-- <ul>
       <li><b>Pixel-wise Temporal Frequency Extraction:</b> 1D Fourier transform along the time axis for each pixel, capturing subtle temporal artifacts.</li>
       <li><b>Attention Proposal Module (APM):</b> Learns to focus on regions with temporal artifacts using weak supervision.</li>
       <li><b>Joint Transformer Module:</b> Fuses global/part-based frequency features and spatio-temporal context for final classification.</li>
-    </ul>
+    </ul> -->
   </section>
 
   <section class="section" id="experiments">
     <h2>Experiments & Results</h2>
-    <div class="fig-row">
       <div class="fig-card">
         <div class="fig-title">Attention Proposal Module (APM) Visualization</div>
         <img src="figures/figure5.png" alt="Visualization of APM proposed regions over time">
         <div class="fig-desc">The APM automatically focuses on regions (e.g., eyes, mouth) where temporal incoherence is most likely, enabling more precise detection of deepfake artifacts.</div>
-      </div>
-      <div class="fig-card">
-        <div class="fig-title">Performance Comparison</div>
-        <img src="figures/figure1.png" alt="Video-level AUC and method comparison">
-        <div class="fig-desc">Our method achieves state-of-the-art video-level AUC across multiple datasets, demonstrating superior generalization and robustness compared to previous approaches.</div>
-      </div>
     </div>
     <ul>
       <li>Achieves <b>state-of-the-art</b> performance on multiple datasets (FF++, CDF, DFDC, KoDF, etc.).</li>
