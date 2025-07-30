@@ -286,12 +286,12 @@
   <section class="section" id="abstract">
     <div class="fig-row">
       <div class="fig-card" style="text-align: center;">
-        <img src="/images/publication/2025-10-21-paper/GD-FAS-teaser.png" width="75%" height="75%">
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-teaser.png" width="75%" height="80%">
       </div>
     </div>
     <h2>Abstract</h2>
     <p> 
-      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b>GD-FAS</b>, comprising Group-wise Scaling Risk Minimization (<b>G</b>S-RM) and Feature Orthogonal Decomposition (FO<b>D</b>) by aligning weights and biases for each domain. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
+      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b><span style="color:#006CC9">GD</span>-FAS</b>, comprising <b><span style="color:#006CC9">G</span>roup-wise Scaling Risk Minimization (GS-RM)</b> and <b>Feature Orthogonal <span style="color:#006CC9">D</span>ecomposition (FOD)</b> by aligning <b>weights</b> and <b>biases</b> for each domain classifier. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
     </p>
   </section>
 
@@ -300,19 +300,28 @@
     <h2>Method & Architecture</h2>
     <div class="fig-row">
       <div class="fig-card" style="text-align: center;">
-        <div class="fig-title">Frameworks</div>
-        <img src="/images/publication/2025-10-21-paper/GD-FAS-architecture.png">
-        <div class="fig-desc">architecture</div>
+        <div class="fig-title">Framework</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-framework.png">
+        <!-- <div class="fig-desc">architecture</div> -->
       </div>
     </div>
+    <ul>
+      <p></p>
+      <li> The pipeline is based on the FLIP-MCL framework and consists of the GS-RM and FOD modules.</li>
+      <p></p>
+    </ul>
     
     <div class="fig-row">
       <div class="fig-card" style="text-align: center;">
         <div class="fig-title">GS-RM and FOD</div>
-        <img src="/images/publication/2025-10-21-paper/GD-FAS-framework.png" width="150%" height="150%">
-        <div class="fig-desc">GD-fas</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-mainmodules.png" width="150%" height="150%">
       </div>
     </div>
+    <ul>
+      <p></p>
+      <li> <b>GS-RM</b> facilitates <b>bias</b> terms alignment by balancing group-wise losses across multiple domains.</li>
+      <li> <b>FOD</b> ensures effective <b>weight</b> terms alignment across domains without compromising bias term alignment.</li>
+    </ul>
   </section>
 
   <section class="section" id="experiments">
@@ -322,46 +331,43 @@
           Experiments
         </div>
         <img src="/images/publication/2025-10-21-paper/GD-FAS-experiment.png">
-        <div class="fig-desc">
+        <!-- <div class="fig-desc">
            main experiments
-        </div>
+        </div> -->
       </div>
     <ul>
-      <li>Achieves <b>state-of-the-art</b> performance on multiple datasets (FF++, CDF, DFDC, KoDF, etc.).</li>
-      <li>Demonstrates strong <b>generalization</b> in cross-deepfakes and cross-synthesis experiments.</li>
-      <li><b>APM</b> is effective in identifying regions of interest for deepfake detection.</li>
+      <p></p>
+      <p>Without CelebA</p>
+      <li>Achieves <b>state-of-the-art</b> performance on the average case and OCI→M.</li>
+      <li>Ranks second in performance on OMI→C and OCM→I.</li>
+      <p></p>
+      <p>With CelebA</p>
+      <li>Ranks second on the average case.</li>
+      <li>Achieves state-of-the-art performance on OCI→M and OMI→C.</li>
+      <li>Notably, achieves an HTER of 0.00 on OCI→M.</li>
     </ul>
 
     <div class="fig-card" style="text-align: center;">
       <div class="fig-title">
-        Visualization
+        PCA 2D Visualization
       </div>
       <img src="/images/publication/2025-10-21-paper/GD-FAS-visualization.png">
-      <div class="fig-desc">
+      <!-- <div class="fig-desc">
          Visualization
-      </div>
+      </div> -->
     </div>
   <ul>
-    <li>Achieves <b>state-of-the-art</b> performance on multiple datasets (FF++, CDF, DFDC, KoDF, etc.).</li>
-    <li>Demonstrates strong <b>generalization</b> in cross-deepfakes and cross-synthesis experiments.</li>
-    <li><b>APM</b> is effective in identifying regions of interest for deepfake detection.</li>
+    <p></p>
+    <li>Our method achieves good alignment of both local boundaries (both weight and bias terms).</li>
+    <li>Our method also demonstrates strong alignment on unseen target domains.</li>
   </ul>
-  </section>
-  <section class="section" id="contributions">
-    <h2>Key Contributions</h2>
-    <ul>
-      <li>Introduces <b>pixel-wise temporal frequency</b> for deepfake video detection.</li>
-      <li>Utilizes an <b>Attention Proposal Module (APM)</b> to identify regions of interest.</li>
-      <li>Leverages a <b>joint transformer module</b> to leverage temporal-frequency information.</li>
-      <li>Achieves <b>state-of-the-art performance</b> and generalizability.</li>
-    </ul>
   </section>
 
   <section class="section" id="bibtex">
     <h2>Citation</h2>
     <div class="fig-row">
       <div class="fig-card">
-<pre><span class="citation" style="font-size: 12px">@article{jung2025group,
+<pre><span class="citation" style="font-size: 11px">@article{jung2025group,
   title   = {Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing},
   author  = {Jung, Seungjin and Lee, Kanghee and Jeong, Yonghyun and Noh, Haeun and Lee, Jungmin and Choi, Jongwon},
   journal = {arXiv preprint arXiv:2507.04006},
