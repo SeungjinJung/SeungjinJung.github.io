@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GD-FAS, ICCV 2025</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
+      background: linear-gradient(135deg, #f7f7fa 0%, #f3f4f6 100%);
+      color: #232946;
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
+    }
+    header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 48px;
+      padding: 56px 0 36px 0;
+      border-radius: 0 0 32px 32px;
+      box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .iccv-badge {
+      position: absolute;
+      top: 24px;
+      right: 36px;
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(90deg, #f3f4f6 0%, #fff 100%);
+      color: #232946;
+      font-size: 1.08rem;
+      font-weight: 900;
+      border-radius: 12px;
+      padding: 6px 18px 6px 12px;
+      box-shadow: 0 2px 10px #bae6fd80;
+      gap: 7px;
+      border: 1.5px solid #e5e7eb;
+      letter-spacing: 0.5px;
+      font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;
+      text-shadow: 0 2px 8px #fff, 0 1px 0 #f3f4f6;
+      z-index: 2;
+    }
+    .iccv-badge svg {
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      margin-right: 2px;
+      margin-left: 0;
+    }
+    .iccv-badge svg ellipse, .iccv-badge svg circle {
+      opacity: 0.95;
+    }
+    .iccv-badge svg ellipse[cx="32"], .iccv-badge svg ellipse[cx="8"] {
+      fill: #d1fae5;
+    }
+    .iccv-badge svg ellipse[cx="20"] {
+      fill: #e5e7eb;
+    }
+    .iccv-badge svg circle {
+      fill: #fef9c3;
+      stroke: #fde68a;
+    }
+    .iccv-badge svg path[stroke="#22c55e"] {
+      stroke: #a7f3d0;
+    }
+    .iccv-badge svg path[stroke="#fbbf24"] {
+      stroke: #fde68a;
+    }
+    .authors {
+      color: #006CC9;
+      font-size: 1.13rem;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .affiliations {
+      color: #006CC9;
+      font-size: 1.01rem;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 44px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(60,60,100,0.04);
+      padding: 36px 36px 26px 36px;
+      border: 1.5px solid #e5e7eb;
+    }
+    h2 {
+      color: #232946;
+      font-size: 1.45rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-shadow: none;
+      text-align: center;
+    }
+    p {
+      font-size: 1.00rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 0 0 0 18px;
+    }
+    .fig-row {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 32px;
+      justify-content: space-between;
+      align-items: stretch;
+      margin: 28px 0 18px 0;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .fig-card {
+      position: relative;
+      flex: 1 1 0;
+      max-width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f7f7fa;
+      border-radius: 14px;
+      box-shadow: 0 1px 8px rgba(60,60,100,0.06);
+      padding: 24px 16px 14px 16px;
+      border: 1.2px solid #e5e7eb;
+      transition: box-shadow 0.2s;
+    }
+    .fig-card.wide {
+      flex: 2 1 0;
+      max-width: 800px;
+      height: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .fig-card:hover {
+      box-shadow: 0 6px 24px rgba(37,99,235,0.13);
+    }
+    .fig-card img {
+      position: relative;
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 12px rgba(60,60,100,0.09);
+      border: 1.2px solid #e5e7eb;
+    }
+    .fig-card.wide img {
+      display: block;
+      width: 600px;
+      max-width: 95%;
+      margin: 0 auto 12px auto;
+      object-fit: contain;
+      box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+      border-radius: 14px;
+      border: 1.2px solid #e5e7eb;
+    }
+    @media (max-width: 1100px) {
+      .fig-row { flex-wrap: wrap; }
+      .fig-card, .fig-card.wide { max-width: 100%; min-width: 0; }
+    }
+    @media (max-width: 700px) {
+      .fig-row { flex-direction: column; gap: 18px; }
+      .iccv-badge {
+        position: static;
+        margin: 18px auto 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .fig-title {
+      font-weight: 700;
+      color: #232946;
+      margin-bottom: 7px;
+      font-size: 1.13em;
+      text-align: center;
+    }
+    .fig-desc {
+      color: #64748b;
+      font-size: 1em;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    #future-work {
+      text-align: center;
+      background: #f3f4f6;
+      color: #232946;
+      font-size: 1.13rem;
+      font-weight: 500;
+      border: 2px dashed #fbbf24;
+      margin-top: 44px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,60,100,0.06);
+      padding: 28px 0 18px 0;
+    }
+    .proj-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px 10px 14px;
+      border-radius: 8px;
+      background: #fff;
+      color: #232946;
+      font-weight: 600;
+      font-size: 1.08em;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+      border: 1.5px solid #e5e7eb;
+      margin: 0;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+    }
+    .proj-btn svg {
+      margin-right: 7px;
+      fill: currentColor !important;
+    }
+    .proj-btn:not(.disabled):hover {
+      background: #fde68a;
+      color: #232946;
+      border-color: #fbbf24;
+    }
+    .proj-btn.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      body { padding: 0 2vw; }
+      .section { padding: 16px 4vw 10px 4vw; }
+      header { padding: 24px 0 10px 0; }
+      h1 { 
+        color: #006CC9; 
+        font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://iccv.thecvf.com/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+      <span class="iccv-badge">
+        🌺 ICCV 2025
+      </span>
+    </a>
+    <h1>
+      <b>Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing</b>
+    </h1>
+    <div class="authors">
+      
+      <a href="https://seungjinjung.github.io"><b>Seungjin Jung</b><sup>1</sup></a>,
+      <!-- <a href="https://tommylee8939.github.io/about/"> -->
+      <a><b>Kanghee Lee</b><sup>2</sup></a>,  
+      <a><b>Yonghyun Jeong</b><sup>3</sup></a>,  
+      <!-- <a href="https://sites.google.com/view/haeunnoh"> -->
+      <a><b>Haeun Noh</b><sup>1</sup></a>,  
+      <!-- <a href="https://sites.google.com/vilab.cau.ac.kr/jungminleeshomepage/home?authuser=0"> -->
+      <a><b>Jungmin Lee</b><sup>2</sup></a>, 
+      <a href="https://www.vilab.cau.ac.kr/about-lab"><b>Jongwon Choi</b><sup>1,2,*</sup></a></div>
+      
+    <div class="affiliations"><b><sup>1</sup>Dept. of Artificial Intelligence, Chung-Ang Univ, <sup>2</sup>Dept. of Advance Imaging, Chung-Ang Univ, <sup>3</sup>NAVER Cloud</b></div>
+  </header>
+
+  <div style="display:flex; justify-content:center; gap:18px; margin:32px 0 24px 0;">
+    <a href="https://github.com/SeungjinJung/GD-FAS" class="proj-btn" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#333" style="vertical-align:middle; margin-right:7px;"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
+      GitHub
+    </a>
+    <a href="https://arxiv.org/abs/2507.04006" class="proj-btn" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 32 32" style="vertical-align:middle; margin-right:7px;"><rect width="32" height="32" rx="6" fill="#b31b1b"/><text x="16" y="22" text-anchor="middle" font-size="15" fill="#fff" font-family="Arial, sans-serif">arXiv</text></svg>
+      arXiv
+    </a>
+    <span class="proj-btn disabled">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#2563eb" style="vertical-align:middle; margin-right:7px;"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.83A2 2 0 0 0 19.41 7L15 2.59A2 2 0 0 0 13.17 2H6zm7 1.5L18.5 9H15a2 2 0 0 1-2-2V3.5z"/></svg>
+      ICCV Paper
+    </span>
+  </div>
+
+<!-- Abstract -->
+  <section class="section" id="abstract">
+    <div class="fig-row">
+      <div class="fig-card" style="text-align: center;">
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-teaser.png">
+      </div>
+    </div>
+    <h2>Abstract</h2>
+    <p> 
+      Domain Generalizable Face Anti-Spoofing (DGFAS) methods effectively capture domain-invariant features by aligning the directions (weights) of local decision boundaries across domains. However, the bias terms associated with these boundaries remain misaligned, leading to inconsistent classification thresholds and degraded performance on unseen target domains. To address this issue, we propose a novel DGFAS framework called <b><span style="color:#006CC9">GD</span>-FAS</b>, comprising <b><span style="color:#006CC9">G</span>roup-wise Scaling Risk Minimization (GS-RM)</b> and <b>Feature Orthogonal <span style="color:#006CC9">D</span>ecomposition (FOD)</b> by aligning <b>weights</b> and <b>biases</b> for each domain classifier. Specifically, GS-RM facilitates bias alignment by balancing group-wise losses across multiple domains. FOD employs the Gram-Schmidt orthogonalization process to decompose the feature space explicitly into domain-invariant and domain-specific subspaces. By enforcing orthogonality between domain-specific and domain-invariant features during training using domain labels, FOD ensures effective weight alignment across domains without negatively impacting bias alignment. Additionally, we introduce Expected Calibration Error (ECE) as a novel evaluation metric for quantitatively assessing the effectiveness of our method in aligning bias terms across domains. Extensive experiments on benchmark datasets demonstrate that our approach achieves state-of-the-art performance, consistently improving accuracy, reducing bias misalignment, and enhancing generalization stability on unseen target domains.
+    </p>
+  </section>
+
+<!-- Method -->
+  <section class="section" id="method">
+    <h2>Method & Architecture</h2>
+    <div class="fig-row">
+      <div class="fig-card" style="text-align: center;">
+        <div class="fig-title">Framework</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-framework.png">
+        <!-- <div class="fig-desc">architecture</div> -->
+      </div>
+    </div>
+    <ul>
+      <p></p>
+      <li> The pipeline is based on the FLIP-MCL framework and consists of the GS-RM and FOD modules.</li>
+      <p></p>
+    </ul>
+    
+    <div class="fig-row">
+      <div class="fig-card" style="text-align: center;">
+        <div class="fig-title">GS-RM and FOD</div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-mainmodules.png">
+      </div>
+    </div>
+    <ul>
+      <p></p>
+      <li> <b>GS-RM</b> facilitates <b>bias</b> terms alignment by balancing group-wise losses across multiple domains.</li>
+      <li> <b>FOD</b> ensures effective <b>weight</b> terms alignment across domains without compromising bias term alignment.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="experiments">
+    <h2>Experiments & Visualization</h2>
+      <div class="fig-card" style="text-align: center;">
+        <div class="fig-title">
+          Experiments
+        </div>
+        <img src="/images/publication/2025-10-21-paper/GD-FAS-experiment.png">
+        <!-- <div class="fig-desc">
+           main experiments
+        </div> -->
+      </div>
+    <ul>
+      <p></p>
+      <p>w/o CelebA</p>
+      <li>Achieves <b>state-of-the-art</b> performance on the average case and OCI→M.</li>
+      <li>Ranks second in performance on OMI→C and OCM→I.</li>
+      <p></p>
+      <p>w CelebA</p>
+      <li>Ranks second on the average case.</li>
+      <li>Achieves <b>state-of-the-art performance</b> on OCI→M and OMI→C.</li>
+      <li>Notably, achieves an HTER of <b>0.00</b> on OCI→M.</li>
+      <p></p>
+    </ul>
+
+    <div class="fig-card" style="text-align: center;">
+      <div class="fig-title">
+        PCA 2D Visualization
+      </div>
+      <img src="/images/publication/2025-10-21-paper/GD-FAS-visualization.png">
+      <!-- <div class="fig-desc">
+         Visualization
+      </div> -->
+    </div>
+  <ul>
+    <p></p>
+    <li>Our method achieves good alignment of local boundaries (both <b>weight</b> and <b>bias</b> terms).</li>
+    <li>Our method also demonstrates strong alignment on <b>unseen target domains</b>.</li>
+  </ul>
+  </section>
+
+  <section class="section" id="bibtex">
+    <h2>Citation</h2>
+    <div class="fig-row">
+      <div class="fig-card">
+<pre><span class="citation" style="font-size: 11px">@article{jung2025group,
+  title   = {Group-wise Scaling and Orthogonal Decomposition for Domain-Invariant Feature Extraction in Face Anti-Spoofing},
+  author  = {Jung, Seungjin and Lee, Kanghee and Jeong, Yonghyun and Noh, Haeun and Lee, Jungmin and Choi, Jongwon},
+  journal = {arXiv preprint arXiv:2507.04006},
+  year    = {2025}
+}</span></pre>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
